@@ -1,0 +1,37 @@
+import turtle as t
+def draw_petal(degree,color,size):
+    t.lt(degree)
+    t.begin_fill()
+    t.color(color)
+    t.circle(size,60)
+    t.lt(120)
+    t.circle(size,60)
+    t.end_fill()
+def draw_stem(degree,length,color):
+    t.rt(degree)
+    t.pensize(10)
+    t.color(color)
+    t.fd(length) 
+    t.back(length)
+    t.lt(degree)
+def draw_center(size,color):
+    t.goto(0,-size)
+    t.color(color)
+    t.begin_fill()
+    t.circle(size)
+    t.end_fill()
+n = 5
+draw_stem(90, 300 ,'black')
+t.pensize(2)
+for i in range(n):
+    draw_petal(0, 'magenta', 200)
+    t.home()
+    t.lt((360/n)*(i+1))
+draw_center(20,'black')
+t.pu()
+t.rt(90)
+t.fd(250)
+t.pd()
+draw_petal(80,'green',150)
+draw_petal(-100, 'green', 150)
+t.ht()
